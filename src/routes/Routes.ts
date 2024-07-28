@@ -13,18 +13,21 @@ router.get("/role", Authorization.Authenticated, RoleController.GetRole);
 router.post(
   "/role",
   Authorization.Authenticated,
+  Authorization.AdminRole,
   RoleValidation.CreateRoleValidation,
   RoleController.CreateRole
 );
 router.put(
   "/role/:id",
   Authorization.Authenticated,
+  Authorization.AdminRole,
   RoleValidation.UpdateRoleValidation,
   RoleController.UpdateRole
 );
 router.delete(
   "/role/:id",
   Authorization.Authenticated,
+  Authorization.SuperUser,
   RoleController.DeleteRole
 );
 router.get(

@@ -17,7 +17,7 @@ const Register = async (req: Request, res: Response): Promise<Response> => {
       password: hashed,
       active: true,
       verified: true,
-      roleId: 3,
+      roleId: 2,
     });
 
     return res
