@@ -117,6 +117,7 @@ const UpdateSubmenu = async (
     return res.status(500).send(Helper.ResponseData(500, "", error, null));
   }
 };
+
 const SoftDelete = async (req: Request, res: Response): Promise<Response> => {
   try {
     const { id } = req.params;

@@ -56,6 +56,10 @@ Submenu.init(
     masterMenuId: {
       allowNull: true,
       type: DataTypes.BIGINT,
+      get() {
+        const value = this.getDataValue("id");
+        return value === null ? null : Number(value);
+      },
     },
     url: {
       allowNull: true,
