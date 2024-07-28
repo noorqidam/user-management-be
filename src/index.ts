@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -10,7 +11,13 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cookieParser());
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
