@@ -19,7 +19,7 @@ module.exports = {
         {
           name: "John Doe",
           email: "johndoe@gmail.com",
-          password: await bcrypt.hash("Rahasia123#", 10), // Pastikan untuk mengenkripsi password
+          password: await bcrypt.hash("Rahasia123#", 10),
           roleId: 1,
           verified: true,
           active: true,
@@ -46,7 +46,6 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
-        // Tambahkan pengguna lainnya sesuai kebutuhan
       ],
       {}
     );

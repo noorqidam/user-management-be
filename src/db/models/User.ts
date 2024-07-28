@@ -40,6 +40,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
+      get() {
+        const value = this.getDataValue("id");
+        return value === null ? null : Number(value);
+      },
     },
     name: {
       type: DataTypes.STRING,
@@ -52,6 +56,10 @@ User.init(
     roleId: {
       type: DataTypes.BIGINT,
       allowNull: true,
+      get() {
+        const value = this.getDataValue("roleId");
+        return value === null ? null : Number(value);
+      },
     },
     password: {
       type: DataTypes.TEXT,

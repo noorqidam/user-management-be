@@ -1,28 +1,36 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import connection from "../../config/dbConnect";
+import Submenu from "./SubMenu";
 
-interface RoleAttributes {
+interface MasterMenuAttributes {
   id?: number;
-  roleName?: string | null;
+  name?: string | null;
+  icon?: string | null;
+  ordering?: number | null;
   active?: boolean | null;
 
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-export interface RoleInput extends Optional<RoleAttributes, "id"> {}
-export interface RoleOutput extends Required<RoleAttributes> {}
+export interface MasterMenuInput extends Optional<MasterMenuAttributes, "id"> {}
+export interface MasterMenuOutput extends Required<MasterMenuAttributes> {}
 
-class Role extends Model<RoleAttributes, RoleInput> implements RoleAttributes {
+class MasterMenu
+  extends Model<MasterMenuAttributes, MasterMenuInput>
+  implements MasterMenuAttributes
+{
   public id!: number;
-  public roleName!: string;
+  public name!: string;
+  public icon!: string;
+  public ordering!: number;
   public active!: boolean;
 
-  public readonly createdAt?: Date;
+  public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-Role.init(
+MasterMenu.init(
   {
     id: {
       allowNull: false,
@@ -34,9 +42,17 @@ Role.init(
         return value === null ? null : Number(value);
       },
     },
-    roleName: {
+    name: {
       allowNull: true,
       type: DataTypes.STRING,
+    },
+    icon: {
+      allowNull: true,
+      type: DataTypes.TEXT,
+    },
+    ordering: {
+      allowNull: true,
+      type: DataTypes.INTEGER,
     },
     active: {
       allowNull: true,
@@ -50,4 +66,6 @@ Role.init(
   }
 );
 
-export default Role;
+MasterMenu.hasMany(Submenu);
+
+export default MasterMenu;

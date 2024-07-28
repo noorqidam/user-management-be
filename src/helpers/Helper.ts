@@ -6,7 +6,7 @@ dotenv.config();
 interface UserData {
   name: string | null;
   email: string | null;
-  roleId: string | null;
+  roleId: number | null;
   verified: boolean | null;
   active: boolean | null;
 }
@@ -38,7 +38,7 @@ const ResponseData = (
   return res;
 };
 
-const GenerateToken = (data: any): string => {
+const GenerateToken = (data: UserData): string => {
   const token = jwt.sign(data, process.env.JWT_TOKEN as string, {
     expiresIn: "1h",
   });
@@ -46,7 +46,7 @@ const GenerateToken = (data: any): string => {
   return token;
 };
 
-const GenerateRefreshToken = (data: any): string => {
+const GenerateRefreshToken = (data: UserData): string => {
   const token = jwt.sign(data, process.env.JWT_REFRESH_TOKEN as string, {
     expiresIn: "7d",
   });

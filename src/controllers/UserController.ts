@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { Op } from "sequelize";
 import Role from "../db/models/Role";
 import User from "../db/models/User";
 import Helper from "../helpers/Helper";
@@ -17,7 +16,7 @@ const Register = async (req: Request, res: Response): Promise<Response> => {
       password: hashed,
       active: true,
       verified: true,
-      roleId: 2,
+      roleId: 3,
     });
 
     return res
