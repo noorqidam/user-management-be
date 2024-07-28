@@ -3,6 +3,7 @@ import express from "express";
 import RoleController from "../controllers/RoleController";
 import UserController from "../controllers/UserController";
 import MasterMenuController from "../controllers/MasterMenuController";
+import SubmenuController from "../controllers/SubmenuController";
 
 import UserValidation from "../middleware/validation/UserValidation";
 import RoleValidation from "../middleware/validation/RoleValidation";
@@ -106,4 +107,51 @@ router.delete(
   Authorization.SuperUser,
   MasterMenuController.DeletePermanent
 );
+
+// Submenu routing
+router.post(
+  "/sub-menu",
+  MenuValidation.CreateSubmenuValidation,
+  Authorization.Authenticated,
+  Authorization.AdminRole,
+  SubmenuController.CreateSubmenu
+);
+router.get(
+  "/sub-menu",
+  Authorization.Authenticated,
+  Authorization.AdminRole,
+  SubmenuController.GetListSubmenu
+);
+router.get(
+  "/sub-menu/get/all",
+  Authorization.Authenticated,
+  Authorization.SuperUser,
+  SubmenuController.GetAllSubmenu
+);
+router.get(
+  "/sub-menu/:id",
+  Authorization.Authenticated,
+  Authorization.AdminRole,
+  SubmenuController.GetDetailSubmenu
+);
+router.patch(
+  "/sub-menu/:id",
+  MenuValidation.CreateSubmenuValidation,
+  Authorization.Authenticated,
+  Authorization.AdminRole,
+  SubmenuController.UpdateSubmenu
+);
+router.delete(
+  "/sub-menu/:id",
+  Authorization.Authenticated,
+  Authorization.AdminRole,
+  SubmenuController.SoftDelete
+);
+router.delete(
+  "/sub-menu/permanent/:id",
+  Authorization.Authenticated,
+  Authorization.SuperUser,
+  SubmenuController.DeletePermanent
+);
+
 export default router;
