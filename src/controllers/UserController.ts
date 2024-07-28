@@ -64,7 +64,7 @@ const UserLogin = async (req: Request, res: Response): Promise<Response> => {
     const token = Helper.GenerateToken(dataUser);
     const refreshToken = Helper.GenerateRefreshToken(dataUser);
 
-    user.accessToken = refreshToken;
+    user.accessToken = token;
     await user.save();
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
@@ -99,7 +99,6 @@ const RefreshToken = async (req: Request, res: Response): Promise<Response> => {
     }
 
     const decodedUser = Helper.ExtractRefreshToken(refreshToken);
-    console.log(decodedUser);
     if (!decodedUser) {
       return res
         .status(401)
@@ -150,9 +149,12 @@ const UserDetail = async (req: Request, res: Response): Promise<Response> => {
         .send(Helper.ResponseData(404, "User not found", null, null));
     }
 
-    user.password = "";
-    user.accessToken = "";
-    return res.status(200).send(Helper.ResponseData(200, "OK", null, user));
+    const { password, accessToken, ...userWithoutSensitiveData } =
+      user.toJSON();
+
+    return res
+      .status(200)
+      .send(Helper.ResponseData(200, "OK", null, userWithoutSensitiveData));
   } catch (error) {
     return res.status(500).send(Helper.ResponseData(500, "", error, null));
   }

@@ -46,7 +46,7 @@ router.get(
   Authorization.Authenticated,
   UserController.UserDetail
 );
-router.get(
+router.post(
   "/user/logout",
   Authorization.Authenticated,
   UserController.UserLogout
