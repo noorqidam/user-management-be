@@ -57,7 +57,7 @@ Submenu.init(
       allowNull: true,
       type: DataTypes.BIGINT,
       get() {
-        const value = this.getDataValue("id");
+        const value = this.getDataValue("masterMenuId");
         return value === null ? null : Number(value);
       },
     },

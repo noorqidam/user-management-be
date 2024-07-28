@@ -66,6 +66,6 @@ MasterMenu.init(
   }
 );
 
-MasterMenu.hasMany(Submenu);
+MasterMenu.hasMany(Submenu, { foreignKey: "masterMenuId" });
 
 export default MasterMenu;
