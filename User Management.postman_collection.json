@@ -1,0 +1,1219 @@
+{
+	"info": {
+		"_postman_id": "59fa74b2-75f0-4bec-a35c-c0616fa52f5b",
+		"name": "User Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8372938"
+	},
+	"item": [
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Add Roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleName\": \"Admin\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicm9sZUlkIjoiMSIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE3MTMwMCwiZXhwIjoxNzIyMTc0OTAwfQ.wrMdpgVSDNr83ZDRv7lrvRIA1xHFymxi-MLmRNBx4yM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/users/role/1",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Roles",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleName\": \"User\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role/3",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Roles",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleName\": \"User\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role/3",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@gmail.com\",\n    \"password\": \"Rahasia123#\",\n    \"confirmPassword\": \"Rahasia123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johndoe@gmail.com\",\n    \"password\": \"Rahasia123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/user/login",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicm9sZUlkIjoiMSIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE2NDQ5MywiZXhwIjoxNzIyMTY0NTEzfQ.d3mE8zuEC1DdrtNkYuP1yuVRb12ZOVICwaJqQAPCYJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johndoe@gmail.com\",\n    \"password\": \"Rahasia123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/user/refresh-token",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicm9sZUlkIjoiMSIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE3NjYwMiwiZXhwIjoxNzIyMTgwMjAyfQ.fb-7I0xtFsx4wiH00oImG6VJ85wgLAW9doUaQDpuPTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johndoe@gmail.com\",\n    \"password\": \"Rahasia123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/user/current-user",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicm9sZUlkIjoiMSIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE3NTIzNSwiZXhwIjoxNzIyMTc4ODM1fQ.KG5TBA266rBpcvjIY6EiIdsTNlw4vD8dCXqDqFm2C2g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johndoe@gmail.com\",\n    \"password\": \"Rahasia123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/user/logout",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Master Menu",
+			"item": [
+				{
+					"name": "Create Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4OTEyNCwiZXhwIjoxNzIyMTkyNzI0fQ.bJtA-ipT3FuobqcewtkS0BK8no0HlWFztY21dy56_dg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/menu",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Menu",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Menu Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Menu (Super Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/menu/get/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"menu",
+								"get",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/menu/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"menu",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Menu (Super Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/menu/permanent/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"menu",
+								"permanent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub Menu",
+			"item": [
+				{
+					"name": "Create Sub Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjIwODAzNCwiZXhwIjoxNzIyMjExNjM0fQ.XGpPeuynDD25x5VR6o2prx11gxkNfwn7DgNjjXuHu60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sub Menu\",\n    \"masterMenuId\": 1,\n    \"url\": \"/sub-menu\",\n    \"title\": \"Sub Menu\",\n    \"icon\": \"-\",\n    \"ordering\": 2,\n    \"isTargetSelf\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/sub-menu",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"sub-menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Menu",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjIwODAzNCwiZXhwIjoxNzIyMjExNjM0fQ.XGpPeuynDD25x5VR6o2prx11gxkNfwn7DgNjjXuHu60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/sub-menu",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"sub-menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Menu Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjIwODAzNCwiZXhwIjoxNzIyMjExNjM0fQ.XGpPeuynDD25x5VR6o2prx11gxkNfwn7DgNjjXuHu60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/sub-menu/1",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"sub-menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sub Menu (Super Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjIwODAzNCwiZXhwIjoxNzIyMjExNjM0fQ.XGpPeuynDD25x5VR6o2prx11gxkNfwn7DgNjjXuHu60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/sub-menu/get/all",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"sub-menu",
+								"get",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Sub Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjIwODAzNCwiZXhwIjoxNzIyMjExNjM0fQ.XGpPeuynDD25x5VR6o2prx11gxkNfwn7DgNjjXuHu60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Master Menu\",\n    \"masterMenuId\": 1,\n    \"url\": \"/master-menu\",\n    \"title\": \"Master Menu123\",\n    \"icon\": \"-\",\n    \"ordering\": 1,\n    \"isTargetSelf\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sub-menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sub-menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Sub Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sub-menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sub-menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sub Menu (Super Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sub-menu/permanent/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sub-menu",
+								"permanent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role Menu Access",
+			"item": [
+				{
+					"name": "Create Role Access",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huZG9lQGdtYWlsLmNvbSIsInJvbGVJZCI6MSwidmVyaWZpZWQiOnRydWUsImFjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzIyMjEwMjQ2LCJleHAiOjE3MjIyMTM4NDZ9.jOGN-JB16I2ckkl8ehAJUgAvTF6YUh0geI8HBVSSncQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": 1,\n    \"submenuId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role-menu-access",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role-menu-access"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Role Access",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huZG9lQGdtYWlsLmNvbSIsInJvbGVJZCI6MSwidmVyaWZpZWQiOnRydWUsImFjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzIyMjEwMjQ2LCJleHAiOjE3MjIyMTM4NDZ9.jOGN-JB16I2ckkl8ehAJUgAvTF6YUh0geI8HBVSSncQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role-menu-access",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role-menu-access"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Role Access Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huZG9lQGdtYWlsLmNvbSIsInJvbGVJZCI6MSwidmVyaWZpZWQiOnRydWUsImFjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzIyMjEwMjQ2LCJleHAiOjE3MjIyMTM4NDZ9.jOGN-JB16I2ckkl8ehAJUgAvTF6YUh0geI8HBVSSncQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role-menu-access/1",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role-menu-access",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Role Access (Super Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huZG9lQGdtYWlsLmNvbSIsInJvbGVJZCI6MSwidmVyaWZpZWQiOnRydWUsImFjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzIyMjEwMjQ2LCJleHAiOjE3MjIyMTM4NDZ9.jOGN-JB16I2ckkl8ehAJUgAvTF6YUh0geI8HBVSSncQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/role-menu-access/get/all",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"role-menu-access",
+								"get",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Sub Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEBnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjIwODAzNCwiZXhwIjoxNzIyMjExNjM0fQ.XGpPeuynDD25x5VR6o2prx11gxkNfwn7DgNjjXuHu60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Master Menu\",\n    \"masterMenuId\": 1,\n    \"url\": \"/master-menu\",\n    \"title\": \"Master Menu123\",\n    \"icon\": \"-\",\n    \"ordering\": 1,\n    \"isTargetSelf\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sub-menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sub-menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Role Access",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/sub-menu/1",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"sub-menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role Access (Super Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkNhcm9sIERhdmlzIiwiZW1haWwiOiJjYXJvbC5kYXZpc0BnbWFpbC5jb20iLCJyb2xlSWQiOjIsInZlcmlmaWVkIjp0cnVlLCJhY3RpdmUiOnRydWUsImlhdCI6MTcyMjE4NTQ0NSwiZXhwIjoxNzIyMTg5MDQ1fQ.7c0vkF-1ZZ8SoK3ydU0k-ID0Ng4MFuGXCUm9YdtCdjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dashboard\",\n    \"icon\": \".\",\n    \"ordering\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl\n}}/api/sub-menu/permanent/1",
+							"host": [
+								"{{baseurl\n}}"
+							],
+							"path": [
+								"api",
+								"sub-menu",
+								"permanent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "Local"
+		}
+	]
+}
