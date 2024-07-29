@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Submenu from "../db/models/SubMenu";
+import Submenu from "../db/models/Submenu";
 import Helper from "../helpers/Helper";
 
 const CreateSubmenu = async (

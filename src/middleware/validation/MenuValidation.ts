@@ -1,8 +1,8 @@
 import Validator from "validatorjs";
 import { Request, Response, NextFunction } from "express";
 import Helpers from "../../helpers/Helper";
-import MasterMenu from "../../db/models/Mastermenu";
-import Submenu from "../../db/models/SubMenu";
+import MasterMenu from "../../db/models/MasterMenu";
+import Submenu from "../../db/models/Submenu";
 import Role from "../../db/models/Role";
 
 const CreateMenuValidation = (

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import MasterMenu from "../db/models/Mastermenu";
+import MasterMenu from "../db/models/MasterMenu";
 import Helper from "../helpers/Helper";
 
 const CreateMenu = async (req: Request, res: Response): Promise<Response> => {

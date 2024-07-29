@@ -1,7 +1,7 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import connection from "../../config/dbConnect";
 import Role from "./Role";
-import Submenu from "./SubMenu";
+import Submenu from "./Submenu";
 
 interface RoleMenuAccessAttributes {
   id?: number;

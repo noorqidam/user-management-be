@@ -2,9 +2,9 @@ import { Request, Response } from "express";
 import { Op } from "sequelize";
 import Role from "../db/models/Role";
 import User from "../db/models/User";
-import RoleMenuAccess from "../db/models/Rolemenuaccess";
-import MasterMenu from "../db/models/Mastermenu";
-import Submenu from "../db/models/SubMenu";
+import RoleMenuAccess from "../db/models/RoleMenuAccess";
+import MasterMenu from "../db/models/MasterMenu";
+import Submenu from "../db/models/Submenu";
 import Helper from "../helpers/Helper";
 import PasswordHelper from "../helpers/PasswordHelper";
 

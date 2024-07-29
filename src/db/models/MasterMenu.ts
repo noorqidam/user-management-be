@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import connection from "../../config/dbConnect";
-import Submenu from "./SubMenu";
+import Submenu from "./Submenu";
 
 interface MasterMenuAttributes {
   id?: number;
